@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { category, products } from '../assets/data.js';
+import { category } from '../assets/data.js';
 import Card from './Card';
 
-const Products = () => {
+const Products = ({ products }) => {
 
     const [selectCategory, setSelectedCategory] = useState("All")
 
-    const filterData = products.filter((item) => selectCategory === "All" ? products : item?.category === selectCategory);
+    const filterData = products?.filter((item) => selectCategory === "All" ? products : item?.category === selectCategory);
 
     return (
         <div className='flex justify-center mt-20 '>

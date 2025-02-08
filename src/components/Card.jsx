@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
     const { product } = props;
     return (
-        <div className='w-80'>
+        <Link to={`/details/${product?.id}`} className='w-80'>
             <div className='p-4 hover:bg-gray-100 h-60'>
                 <img src={product?.image} className='h-full' />
             </div>
@@ -17,7 +18,7 @@ const Card = (props) => {
                 <div>Rating {product?.rating?.rate} (Review {product?.rating?.count})</div>
             </div>
             <button className='bg-blue-700 text-white rounded-lg px-6 py-2 mt-4'>By now</button>
-        </div>
+        </Link>
     )
 }
 
